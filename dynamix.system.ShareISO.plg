@@ -26,8 +26,8 @@ The 'pre-install' script.
 -->
 <FILE Run="/bin/bash">
 <INLINE>
-### Stop service
-##/etc/rc.d/rc.autofan stop 2>/dev/null
+# Stop service
+/etc/rc.d/rc.autofan stop 2>/dev/null
 
 # Remove old 'source' files
 rm -f $(ls /boot/config/plugins/&name;/&name;*.txz 2>/dev/null|grep -v '&version;')
@@ -46,8 +46,8 @@ Workaround to start service.
 -->
 <FILE Name="/tmp/start_service">
 <INLINE>
-###!/bin/bash
-##/etc/rc.d/rc.autofan start 2>/dev/null
+#!/bin/bash
+/etc/rc.d/rc.autofan start 2>/dev/null
 </INLINE>
 </FILE>
 
