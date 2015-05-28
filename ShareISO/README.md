@@ -1,4 +1,4 @@
-# UnRAIDv6-plugin
+#Share ISO
 
 My first unRAID plugin.
 Trying to get Share ISO working on unRAID v6
