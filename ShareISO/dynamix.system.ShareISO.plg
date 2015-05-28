@@ -5,7 +5,7 @@
 <!ENTITY author    "soana">
 <!ENTITY version   "2015.03.19">
 <!ENTITY launch    "Settings/ShareISOSettings">
-<!ENTITY pluginURL "https://github.com/soana/UnRAIDv6-plugin/blob/master/&name;.plg">
+<!ENTITY pluginURL "https://github.com/soana/UnRAIDv6-plugin/blob/master/ShareISO/&name;.plg">
 ]>
 
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
@@ -35,7 +35,7 @@ rm -f $(ls /boot/config/plugins/&name;/&name;*.txz 2>/dev/null|grep -v '&version
 The 'source' file.
 -->
 <FILE Name="/boot/config/plugins/&name;/&name;-&version;.txz" Run="upgradepkg --install-new">
-<URL>https://github.com/soana/UnRAIDv6-plugin/blob/master/&name;-&version;.txz</URL>
+<URL>https://github.com/soana/UnRAIDv6-plugin/blob/master/ShareISO/&name;-&version;.txz</URL>
 </FILE>
 
 <!--
