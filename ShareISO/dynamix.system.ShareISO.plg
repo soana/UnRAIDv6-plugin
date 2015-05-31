@@ -3,7 +3,7 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "dynamix.system.ShareISO">
 <!ENTITY author    "soana">
-<!ENTITY version   "2015.03.19">
+<!ENTITY version   "2015.05.30">
 <!ENTITY launch    "Settings/ShareISOSettings">
 <!ENTITY pluginURL "https://github.com/soana/UnRAIDv6-plugin/blob/master/ShareISO/&name;.plg">
 ]>
