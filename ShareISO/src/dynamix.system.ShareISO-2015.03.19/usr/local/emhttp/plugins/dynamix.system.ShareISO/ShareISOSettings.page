@@ -1,0 +1,38 @@
+Menu="Utilities"
+Title="ShareISO"
+Icon="dynamix.system.ShareISO.png"
+---
+
+
+<!-- needed for the filetree to work -->
+<link type="text/css" rel="stylesheet" href="/plugins/dynamix.system.ShareISO/styles/fileTree.css">
+<script type="text/javascript" src="/plugins/dynamix.system.ShareISO/scripts/fileTree.js"></script>
+
+<script>
+$(function() {
+  $('#plugin_table').tablesorter({headers:{0:{sorter:false},5:{sorter:false}}});
+  $('#plugin_tree').fileTree({root:'/mnt/user/',filter:'iso',script:'/plugins/dynamix.plugin.manager/include/FileTree.php',multiFolder:false}, function(file) {$('#plugin_file').val(file);});
+  $('.desc_readmore').readmore({maxHeight: 100});
+});
+
+</script>
+
+
+
+<script>
+function installiso(name) {
+  if (name) openBox('mkdir /mnt/user/'+name,'Share ISO',600,900,true);
+}
+</script>
+
+
+<form name="share_iso" method="POST" target="progressFrame">
+<p>Enter a share name</p>
+<input type="text" name="share" id="share_name" maxlength="1024" value="" style="width:33%">
+<p>Enter path to iso file or select from below</p>
+<input type="text" name="file" id="plugin_file" maxlength="1024" value="" style="width:33%">
+<input type="button" value="Share ISO" onclick="installiso(this.form.share_name.value)">
+</form>
+
+<p>Select local plugin file </p>
+<div id="plugin_tree"></div>

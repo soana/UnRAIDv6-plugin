@@ -1,0 +1,52 @@
+Menu="Utilities"
+Title="ShareISO"
+Icon="dynamix.system.ShareISO.png"
+---
+<?PHP
+/* Copyright 2014, Lime Technology
+ * Copyright 2014, Bergware International.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 2,
+ * as published by the Free Software Foundation.
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ */
+?>
+<link type="text/css" rel="stylesheet" href="/plugins/dynamix.system.ShareISO/styles/fileTree.css">
+<script type="text/javascript" src="/plugins/dynamix.system.ShareISO/scripts/fileTree.js"></script>
+
+<script>
+$(function() {
+  $('#plugin_table').tablesorter({headers:{0:{sorter:false},5:{sorter:false}}});
+  $('#plugin_tree').fileTree({root:'/mnt/user/',filter:'iso',script:'/plugins/dynamix.plugin.manager/include/FileTree.php',multiFolder:false}, function(file) {$('#plugin_file').val(file);});
+  $('.desc_readmore').readmore({maxHeight: 100});
+});
+</script>
+
+<script>
+function installPlugin(name) {
+  var file = name.trim();
+  if (file) openBox('mkdir /mnt/user/DVD_1', 'ls -all');
+}
+</script>
+**Share name**
+<input type="text" name="file" id="share_name" maxlength="1024" value="" style="width:33%">
+
+**Enter path to local ISO file**
+
+<form name="plugin_install" method="POST" target="progressFrame">
+<input type="text" name="file" id="plugin_file" maxlength="1024" value="" style="width:33%">
+<input type="button" value="ShareISO" onclick="installPlugin(this.form.file.value)">
+</form>
+
+> To download and install a plugin, enter the plg file URL and click **Install**. A window will open
+> that displays install progress. Do not close this window until install has completed. You may also specify
+> the local file name of an extension.
+
+**Select local ISO file**
+<div id="plugin_tree"></div>
+
+**List of shared ISO files**
+
